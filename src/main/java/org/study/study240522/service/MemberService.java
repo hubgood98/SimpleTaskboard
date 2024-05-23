@@ -1,5 +1,7 @@
 package org.study.study240522.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.study.study240522.domain.Member;
 import org.study.study240522.repository.MemberRepository;
 import org.study.study240522.repository.MemoryMemberRepository;
@@ -7,12 +9,17 @@ import org.study.study240522.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
-/**
+    private final MemberRepository memberRepository;
+    /**
  회원가입
 **/
-
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    @Autowired
+    public MemberService(MemberRepository memberRepository)
+    {
+     this.memberRepository = memberRepository;
+    }
 
     public Long join(Member member) {
 

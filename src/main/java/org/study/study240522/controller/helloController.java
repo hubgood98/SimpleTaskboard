@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class helloController {
@@ -17,10 +18,11 @@ public class helloController {
     }
 
     @GetMapping("hello-MVC")
+    @ResponseBody
     public String helloMVC(@RequestParam("name")String name, Model model)
     {
         model.addAttribute("name", name);
-        return "hello";
+        return "내 이름은 김희준";
     }
 
 }

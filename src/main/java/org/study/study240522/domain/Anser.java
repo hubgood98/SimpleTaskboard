@@ -2,7 +2,6 @@ package org.study.study240522.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-
 import java.time.LocalDateTime;
 
 @Entity

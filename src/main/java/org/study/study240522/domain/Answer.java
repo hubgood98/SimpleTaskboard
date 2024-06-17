@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 //답변 클래스
-public class Anser {
+public class Answer {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

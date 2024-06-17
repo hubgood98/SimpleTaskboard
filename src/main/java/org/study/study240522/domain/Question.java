@@ -1,11 +1,15 @@
 package org.study.study240522.domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Question {
 //질문클래스
     @Id
@@ -20,5 +24,5 @@ public class Question {
 
     private LocalDateTime createDate;
     @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
-    private List<Anser> answerList;
+    private List<Answer> answerList;
 }
